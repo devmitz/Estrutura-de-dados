@@ -15,7 +15,11 @@ public class buscaLinear {
         int numeroAchado = BuscaLinear(vetor, numeroProcurado);
         long tempoFinal = System.currentTimeMillis();
 
-        System.out.println("Numero achado na posição:" + numeroAchado);
+        if (numeroAchado < 0 ) {
+            System.out.println("Número não foi achado.");
+        }else{
+            System.out.println("Numero achado na posição:" + numeroAchado);
+        }
         System.out.println("\nExecutado em = " + (tempoFinal - tempoInicial) + " ms");
     }
     public static int BuscaLinear(int[] vetor, int numeroProcurado){
