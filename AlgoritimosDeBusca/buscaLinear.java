@@ -1,3 +1,4 @@
+package AlgoritimosDeBusca;
 public class buscaLinear {
     public static void main(String args[]) {
         int quantidade = 10;
