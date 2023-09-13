@@ -55,7 +55,6 @@ public class Exercicio3 {
             swapped = false;
             for (int i = 1; i < n; i++) {
                 if (arr[i - 1].compareTo(arr[i]) > 0) {
-                    // Swap arr[i-1] and arr[i]
                     String temp = arr[i - 1];
                     arr[i - 1] = arr[i];
                     arr[i] = temp;
