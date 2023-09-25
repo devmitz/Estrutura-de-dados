@@ -5,8 +5,7 @@ public class ListaSimples{
         LinkedList<String> nomes = new LinkedList<String>();
         nomes.add("Felipe");
         nomes.add("Rodrigo");
-        nomes.add("OnlyFans");
-        nomes.add("Esquizo");
+        nomes.add("Carlos");
         System.out.println(nomes);
     }
 }
