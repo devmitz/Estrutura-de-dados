@@ -53,4 +53,43 @@ public class ArrayStack {
     public String toString() {
         return "Pilha: " + Arrays.toString(stackArray);
     }
+
+    public static void main(String args[]){
+        ArrayStack stack = new ArrayStack(4);
+
+        stack.push(3);
+        System.out.println("push(3): " + stack);
+        stack.push(5);
+        System.out.println("push(5): " + stack);
+        stack.pop();
+        System.out.println("pop(): " + stack);
+        stack.push(7);
+        System.out.println("push(7): " + stack);
+        // stack.top();
+        // System.out.println("top(): " + stack);
+        stack.pop();
+        System.out.println("pop(): " + stack);
+        stack.pop();
+        System.out.println("pop(): " + stack);
+        stack.isEmpty();
+        System.out.println("isEmpty(): " + stack);
+        stack.push(9);
+        System.out.println("push(9): " + stack);
+        stack.push(7);
+        System.out.println("push(7): " + stack);
+        stack.push(5);
+        System.out.println("push(5): " + stack);
+        stack.push(3);
+        System.out.println("push(3): " + stack);
+        // stack.size();
+        // System.out.println("size(): " + stack);
+        stack.pop();
+        System.out.println("pop(): " + stack);
+        stack.push(8);
+        System.out.println("push(8): " + stack);
+        stack.pop();
+        System.out.println("pop(): " + stack);
+        stack.pop();
+        System.out.println("pop(): " + stack);
+    }
 }
