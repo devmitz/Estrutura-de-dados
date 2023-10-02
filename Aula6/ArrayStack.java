@@ -61,17 +61,13 @@ public class ArrayStack {
         System.out.println("push(3): " + stack);
         stack.push(5);
         System.out.println("push(5): " + stack);
-        stack.pop();
-        System.out.println("pop(): " + stack);
+        System.out.println("pop(): " + stack.pop());
         stack.push(7);
         System.out.println("push(7): " + stack);
         System.out.println("peek() // top: " + stack.peek());
-        stack.pop();
-        System.out.println("pop(): " + stack);
-        stack.pop();
-        System.out.println("pop(): " + stack);
-        stack.isEmpty();
-        System.out.println("isEmpty(): " + stack);
+        System.out.println("pop(): " + stack.pop());
+        System.out.println("pop(): " + stack.pop());
+        System.out.println("isEmpty(): " + stack.isEmpty());
         stack.push(9);
         System.out.println("push(9): " + stack);
         stack.push(7);
@@ -80,13 +76,10 @@ public class ArrayStack {
         System.out.println("push(5): " + stack);
         stack.push(3);
         System.out.println("push(3): " + stack);
-        stack.pop();
-        System.out.println("pop(): " + stack);
+        System.out.println("pop(): " + stack.pop());
         stack.push(8);
         System.out.println("push(8): " + stack);
-        stack.pop();
-        System.out.println("pop(): " + stack);
-        stack.pop();
-        System.out.println("pop(): " + stack);
+        System.out.println("pop(): " + stack.pop());
+        System.out.println("pop(): " + stack.pop());
     }
 }
