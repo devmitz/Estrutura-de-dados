@@ -25,8 +25,7 @@ public class ArrayStack {
 
     public Object pop() {
         if (isEmpty()) {
-            System.out.println("error");
-            return -1;
+            return "error";
         }
         int oldTop = Integer.parseInt(stackArray[top].toString());
         stackArray[top] = null;
@@ -62,11 +61,12 @@ public class ArrayStack {
     public static void main(String args[]){
         ArrayStack stack = new ArrayStack(4);
 
-        
         System.out.println("push(5): " + stack.push(5));
         System.out.println("push(3): " +  stack.push(3));
         System.out.println("pop(): " + stack.pop());
         System.out.println("push(7): " + stack.push(7));
+        System.out.println("pop(): " + stack.pop());
+        System.out.println("top(): " + stack.peek());
         System.out.println("pop(): " + stack.pop());
         System.out.println("pop(): " + stack.pop());
         System.out.println("isEmpty(): " + stack.isEmpty());
