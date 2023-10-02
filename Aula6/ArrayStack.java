@@ -13,19 +13,17 @@ public class ArrayStack {
         top = -1;
     }
 
-    public String push(Object value) {
+    public void push(Object value) {
         if (isFull()) {
-            System.out.println("Stack cheia");
-            return "Stack cheia";
+            return;
         }
         top++;
         stackArray[top] = value;
-        return "-";
     }
 
     public Object pop() {
         if (isEmpty()) {
-            return "error";
+            return -1;
         }
         int oldTop = Integer.parseInt(stackArray[top].toString());
         stackArray[top] = null;
@@ -60,23 +58,38 @@ public class ArrayStack {
 
     public static void main(String args[]){
         ArrayStack stack = new ArrayStack(4);
-
-        System.out.println("push(5): " + stack.push(5));
-        System.out.println("push(3): " +  stack.push(3));
+        stack.push(5);
+        System.out.println("push(5): -");
+        stack.push(3);
+        System.out.println("push(3): -");
         System.out.println("pop(): " + stack.pop());
-        System.out.println("push(7): " + stack.push(7));
+        stack.push(7);
+        System.out.println("push(7): -");
         System.out.println("pop(): " + stack.pop());
         System.out.println("top(): " + stack.peek());
         System.out.println("pop(): " + stack.pop());
-        System.out.println("pop(): " + stack.pop());
+
+        System.out.print("pop(): ");
+        int valor = (int) stack.pop();
+        if( valor < 0 ) {
+            System.out.print("error\n");
+        } else{
+            System.out.print(valor);
+        }
+
         System.out.println("isEmpty(): " + stack.isEmpty());
-        System.out.println("push(9): " + stack.push(9));
-        System.out.println("push(7): " + stack.push(7));        
-        System.out.println("push(3): " + stack.push(3));
-        System.out.println("push(5): " + stack.push(5));
+        stack.push(9);
+        System.out.println("push(9): -");
+        stack.push(7);
+        System.out.println("push(7): -");     
+        stack.push(3);   
+        System.out.println("push(3): -");
+        stack.push(5);
+        System.out.println("push(5): -");
         System.out.println("size(): " + stack.size());
         System.out.println("pop(): " + stack.pop());
-        System.out.println("push(8): " + stack.push(8));
+        stack.push(8);
+        System.out.println("push(8): -");
         System.out.println("pop(): " + stack.pop());
         System.out.println("pop(): " + stack.pop());
     }
