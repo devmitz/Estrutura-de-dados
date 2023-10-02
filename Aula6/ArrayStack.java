@@ -66,13 +66,13 @@ public class ArrayStack {
         System.out.println(stack);
 
         System.out.println("pop(): " + stack.pop());
+        System.out.println(stack);
 
         stack.push(7);
         System.out.println("push(7): ");
         System.out.println(stack);
 
         System.out.println("peek() // top: " + stack.peek());
-        System.out.println(stack);
         
         System.out.println("pop(): " + stack.pop());
         System.out.println(stack);
@@ -81,6 +81,9 @@ public class ArrayStack {
         System.out.println(stack);
 
         System.out.println("isEmpty(): " + stack.isEmpty());
+        System.out.println(stack);
+
+        System.out.println("pop(): " + stack.pop());
         System.out.println(stack);
 
         stack.push(9);
