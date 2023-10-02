@@ -13,18 +13,19 @@ public class ArrayStack {
         top = -1;
     }
 
-    public void push(Object value) {
+    public String push(Object value) {
         if (isFull()) {
             System.out.println("Stack cheia");
-            return;
+            return "Stack cheia";
         }
         top++;
         stackArray[top] = value;
+        return "-";
     }
 
     public Object pop() {
         if (isEmpty()) {
-            System.out.println("Stack vazia");
+            System.out.println("error");
             return -1;
         }
         int oldTop = Integer.parseInt(stackArray[top].toString());
@@ -49,70 +50,34 @@ public class ArrayStack {
         return (top == maxSize - 1);
     }
 
+    public int size(){
+        return stackArray.length;
+    }
+
     @Override
     public String toString() {
-        return "\tPilha: " + Arrays.toString(stackArray) + "\n";
+        return "\tConteudo da Pilha: " + Arrays.toString(stackArray) + "\n";
     }
 
     public static void main(String args[]){
         ArrayStack stack = new ArrayStack(4);
 
-        stack.push(3);
-        System.out.println("push(3): ");
-        System.out.println(stack);
-
-        stack.push(5);
-        System.out.println("push(5): ");
-        System.out.println(stack);
-
-        System.out.println("pop(): " + stack.pop());
-        System.out.println(stack);
-
-        stack.push(7);
-        System.out.println("push(7): ");
-        System.out.println(stack);
-
-        System.out.println("peek() // top: " + stack.peek());
         
+        System.out.println("push(5): " + stack.push(5));
+        System.out.println("push(3): " +  stack.push(3));
         System.out.println("pop(): " + stack.pop());
-        System.out.println(stack);
-
+        System.out.println("push(7): " + stack.push(7));
         System.out.println("pop(): " + stack.pop());
-        System.out.println(stack);
-
+        System.out.println("pop(): " + stack.pop());
         System.out.println("isEmpty(): " + stack.isEmpty());
-        System.out.println(stack);
-
+        System.out.println("push(9): " + stack.push(9));
+        System.out.println("push(7): " + stack.push(7));        
+        System.out.println("push(3): " + stack.push(3));
+        System.out.println("push(5): " + stack.push(5));
+        System.out.println("size(): " + stack.size());
         System.out.println("pop(): " + stack.pop());
-        System.out.println(stack);
-
-        stack.push(9);
-        System.out.println("push(9): ");
-        System.out.println(stack);
-
-        stack.push(7);
-        System.out.println("push(7): ");
-        System.out.println(stack);
-        
-        stack.push(5);
-        System.out.println("push(5): ");
-        System.out.println(stack);
-
-        stack.push(3);
-        System.out.println("push(3): ");
-        System.out.println(stack);
-
+        System.out.println("push(8): " + stack.push(8));
         System.out.println("pop(): " + stack.pop());
-        System.out.println(stack);
-
-        stack.push(8);
-        System.out.println("push(8): ");
-        System.out.println(stack);
-
         System.out.println("pop(): " + stack.pop());
-        System.out.println(stack);
-
-        System.out.println("pop(): " + stack.pop());
-        System.out.println(stack);
     }
 }
