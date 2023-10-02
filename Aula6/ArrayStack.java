@@ -51,35 +51,65 @@ public class ArrayStack {
 
     @Override
     public String toString() {
-        return "Pilha: " + Arrays.toString(stackArray);
+        return "\tPilha: " + Arrays.toString(stackArray) + "\n";
     }
 
     public static void main(String args[]){
         ArrayStack stack = new ArrayStack(4);
 
         stack.push(3);
-        System.out.println("push(3): " + stack);
+        System.out.println("push(3): ");
+        System.out.println(stack);
+
         stack.push(5);
-        System.out.println("push(5): " + stack);
+        System.out.println("push(5): ");
+        System.out.println(stack);
+
         System.out.println("pop(): " + stack.pop());
+
         stack.push(7);
-        System.out.println("push(7): " + stack);
+        System.out.println("push(7): ");
+        System.out.println(stack);
+
         System.out.println("peek() // top: " + stack.peek());
+        System.out.println(stack);
+        
         System.out.println("pop(): " + stack.pop());
+        System.out.println(stack);
+
         System.out.println("pop(): " + stack.pop());
+        System.out.println(stack);
+
         System.out.println("isEmpty(): " + stack.isEmpty());
+        System.out.println(stack);
+
         stack.push(9);
-        System.out.println("push(9): " + stack);
+        System.out.println("push(9): ");
+        System.out.println(stack);
+
         stack.push(7);
-        System.out.println("push(7): " + stack);
+        System.out.println("push(7): ");
+        System.out.println(stack);
+        
         stack.push(5);
-        System.out.println("push(5): " + stack);
+        System.out.println("push(5): ");
+        System.out.println(stack);
+
         stack.push(3);
-        System.out.println("push(3): " + stack);
+        System.out.println("push(3): ");
+        System.out.println(stack);
+
         System.out.println("pop(): " + stack.pop());
+        System.out.println(stack);
+
         stack.push(8);
-        System.out.println("push(8): " + stack);
+        System.out.println("push(8): ");
+        System.out.println(stack);
+
         System.out.println("pop(): " + stack.pop());
+        System.out.println(stack);
+
         System.out.println("pop(): " + stack.pop());
+        System.out.println(stack);
     }
 }
