@@ -27,10 +27,10 @@ public class ArrayStack {
             System.out.println("Stack vazia");
             return -1;
         }
-        int oldTop = top;
+        int oldTop = Integer.parseInt(stackArray[top].toString());
+        stackArray[top] = null;
         top--;
-        stackArray[oldTop] = null;
-        return stackArray[oldTop];
+        return oldTop;
     }
 
     public Object peek() {
