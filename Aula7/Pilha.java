@@ -54,9 +54,4 @@ public class Pilha<T> {
         tamanho--;
         return info;
     }
-
-    @Override
-    public String toString(){
-        return getTopo().toString();
-    }
 }
