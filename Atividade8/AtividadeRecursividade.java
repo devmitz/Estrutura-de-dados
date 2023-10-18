@@ -2,7 +2,7 @@ package Atividade8;
 
 public class AtividadeRecursividade {
     public static void main(String[] args) {
-        int n = 50; // Replace with the desired Fibonacci term you want to calculate
+        int n = 10; // Replace with the desired Fibonacci term you want to calculate
         int result = calculateFibonacci(n);
         System.out.println("The " + n + "th Fibonacci number is: " + result);
     }
