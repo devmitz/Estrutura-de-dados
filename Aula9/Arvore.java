@@ -1,5 +1,8 @@
 package Aula9;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Arvore<TIPO extends Comparable> {
 
     private Elemento<TIPO> raiz;
@@ -61,6 +64,88 @@ public class Arvore<TIPO extends Comparable> {
             System.out.println(atual.getValor());
         }
     }
+
+    public void largura(Elemento<TIPO> raiz) {
+        if (raiz == null)
+            return;
+
+        Queue<Elemento<TIPO>> fila = new LinkedList<>();
+        fila.add(raiz);
+
+        while (!fila.isEmpty()) {
+            Elemento<TIPO> atual = fila.poll();
+            System.out.println(atual.getValor());
+
+            if (atual.getEsquerda() != null)
+                fila.add(atual.getEsquerda());
+
+            if (atual.getDireita() != null)
+                fila.add(atual.getDireita());
+        }
+    }
+
+    public int contarNaoFolhas(Elemento<TIPO> raiz) {
+        if (raiz == null) {
+            return 0;
+        }
+
+        // Se o nó atual não é folha, incrementa o contador
+        if (raiz.getEsquerda() != null || raiz.getDireita() != null) {
+            int contador = 1;  // Inicia com 1 para contar o próprio nó
+            contador += contarNaoFolhas(raiz.getEsquerda());
+            contador += contarNaoFolhas(raiz.getDireita());
+            return contador;
+        }
+
+        return 0;
+    }
+
+    public Elemento<TIPO> encontrarMenorProfundidadeFolha(Elemento<TIPO> raiz) {
+        if (raiz == null)
+            return null;
+
+        Queue<Elemento<TIPO>> fila = new LinkedList<>();
+        fila.add(raiz);
+
+        while (!fila.isEmpty()) {
+            Elemento<TIPO> atual = fila.poll();
+
+            // Verifica se o nó atual é uma folha
+            if (atual.getEsquerda() == null && atual.getDireita() == null) {
+                return atual;
+            }
+
+            // Adiciona os filhos do nó atual à fila
+            if (atual.getEsquerda() != null)
+                fila.add(atual.getEsquerda());
+
+            if (atual.getDireita() != null)
+                fila.add(atual.getDireita());
+        }
+
+        return null; // Nenhuma folha encontrada
+    }
+
+    public void substituirValor(TIPO valorAntigo, TIPO valorNovo) {
+        raiz = substituirValorRec(raiz, valorAntigo, valorNovo);
+    }
+
+    private Elemento<TIPO> substituirValorRec(Elemento<TIPO> raiz, TIPO valorAntigo, TIPO valorNovo) {
+        if (raiz == null)
+            return null;
+
+        // Verifica se o valor do nó atual é igual ao valor a ser substituído
+        if (raiz.getValor().equals(valorAntigo)) {
+            raiz.setValor(valorNovo);  // Substitui o valor
+        }
+
+        // Recursivamente substitui valores nos filhos esquerdo e direito
+        raiz.setEsquerda(substituirValorRec(raiz.getEsquerda(), valorAntigo, valorNovo));
+        raiz.setDireita(substituirValorRec(raiz.getDireita(), valorAntigo, valorNovo));
+
+        return raiz;
+    }
+
 
     public boolean remover(TIPO valor){
         //buscar o elemento na árvore
