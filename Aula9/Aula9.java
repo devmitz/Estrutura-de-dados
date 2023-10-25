@@ -14,5 +14,10 @@ public class Aula9 {
 
         System.out.println("Pós ordem: ");
         arvore.posOrdem(arvore.getRaiz());
+
+        arvore.remover(30);
+
+        System.out.println("Pré ordem:");
+        arvore.preOrdem(arvore.getRaiz());
     }
 }
